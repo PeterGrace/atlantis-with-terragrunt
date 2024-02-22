@@ -19,6 +19,7 @@ RUN wget https://github.com/transcend-io/terragrunt-atlantis-config/releases/dow
  && mv terragrunt-atlantis-config_${TERRAFORM_ATLANTIS_CONFIG_VER}_linux_amd64/terragrunt-atlantis-config_${TERRAFORM_ATLANTIS_CONFIG_VER}_linux_amd64 terragrunt-atlantis-config \
  && install terragrunt-atlantis-config /usr/local/bin 
 
+ADD repos.yaml /home/atlantis/repos.yaml
 
 # cleanup
 WORKDIR /

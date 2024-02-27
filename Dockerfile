@@ -14,7 +14,8 @@ RUN wget https://github.com/gruntwork-io/terragrunt/releases/download/v${TERRAGR
  && install terragrunt /usr/local/bin
 
 # tfswitch
-RUN curl -L https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/install.sh | bash
+RUN curl -L https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/install.sh | bash \
+ && tfswitch -u
 
 # terragrunt-atlantis-config
 RUN wget https://github.com/transcend-io/terragrunt-atlantis-config/releases/download/v${TERRAFORM_ATLANTIS_CONFIG_VER}/terragrunt-atlantis-config_${TERRAFORM_ATLANTIS_CONFIG_VER}_linux_amd64.tar.gz \

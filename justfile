@@ -6,14 +6,14 @@ image := "petergrace/atlantis-with-terragrunt"
 tag := `git describe --tags|| echo dev`
 
 make-image-local:
-  docker buildx build --no-cache --load --platform linux/amd64 \
+  docker buildx build --load --platform linux/amd64 \
   -t {{registry}}/{{image}}:latest \
   -t {{registry}}/{{image}}:{{shortcommit}} \
   -t {{registry}}/{{image}}:{{commit}} \
   -t {{registry}}/{{image}}:{{tag}} \
   .
 make-image:
-  docker buildx build --no-cache --push --platform linux/amd64 \
+  docker buildx build --push --platform linux/amd64 \
   -t {{registry}}/{{image}}:latest \
   -t {{registry}}/{{image}}:{{shortcommit}} \
   -t {{registry}}/{{image}}:{{commit}} \

@@ -30,3 +30,5 @@ WORKDIR /
 RUN rm -rf /tmp/prep /usr/local/bin/terraform
 USER 100
 
+RUN tfswitch -u
+ENV PATH=$PATH:/home/atlantis/bin:.
